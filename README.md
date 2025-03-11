@@ -23,7 +23,7 @@ This is a starter React app for trying out [Embedded Analytics SDK](https://www.
    npm install @metabase/embedding-sdk-react@53-stable
    ```
 
-4. Start the frontend. It will be available at [http://localhost:5173](http://localhost:5173):
+4. Start the frontend. You can view the app at [http://localhost:5173](http://localhost:5173). The app has some hints and helpful links to get you started.
 
    ```bash
    npm run dev
@@ -35,7 +35,35 @@ This is a starter React app for trying out [Embedded Analytics SDK](https://www.
    npx @metabase/embedding-sdk-react start
    ```
 
-6. Follow the instructions in the terminal to complete the setup.
+6. Follow the instructions in your terminal to complete the setup. You can navigate the prompts with the arrow keys and `Enter` to select an option.
+
+7. Import the `<AnalyticsPage />` demo component into `App.jsx`, like so:
+
+   ```diff
+   + import { AnalyticsPage } from "./components/metabase";
+
+   export default function App() {
+     return (
+       <DemoLayout>
+         <div className="min-h-[650px] w-full max-w-[1200px] bg-white rounded-xl">
+   +       <AnalyticsPage />
+         </div>
+       </DemoLayout>
+     );
+   }
+   ```
+
+You can then play around with the interactive dashboard!
+
+## What next?
+
+- The interactive dashboard is added by default in `analytics-dashboard.jsx`.
+  - Try rendering an [interactive question](https://www.metabase.com/docs/latest/embedding/sdk/questions) instead.
+- You can update the theme via `MetabaseProvider` in `embedding-provider.jsx`
+
+## A quick note on React providers
+
+In a production React app, you should never add `MetabaseProvider` to multiple pages or components, just like any other React providers. Instead, you should put it in the root of your app (e.g. `App.jsx`) or your root provider if you have one.
 
 ## A quick note on the CLI
 
