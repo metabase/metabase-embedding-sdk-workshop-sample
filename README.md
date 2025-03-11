@@ -61,22 +61,13 @@ You can then play around with the interactive dashboard!
   - Try rendering an [interactive question](https://www.metabase.com/docs/latest/embedding/sdk/questions) instead.
 - You can update the theme via `MetabaseProvider` in `embedding-provider.jsx`
 
-## A quick note on React providers
+## Do not add `MetabaseProvider` to multiple pages in a production app
 
 In a production React app, you should never add `MetabaseProvider` to multiple pages or components, just like any other React providers. Instead, you should put it in the root of your app (e.g. `App.jsx`) or your root provider if you have one.
 
-## A quick note on the CLI
+## CLI is not intended for production use
 
-We built a single command to spin up a Metabase and help you get an embedded dashboard in your app. This setup with API keys won’t work in production; it’s only intended for you to quickly try out the SDK on your local machine. A production setup requires a Pro/Enterprise license, and SSO with JWT.
-
-## What's Next?
-
-During the workshop, we'll:
-
-1. Set up the Metabase React SDK
-2. Configure embedding settings in your Metabase instance
-3. Add an interactive dashboard to this application
-4. Explore various customization options
+The CLI spins up a Metabase and help you get an embedded dashboard in your app. This setup with API keys won’t work in production; it’s only intended for you to quickly try out the SDK on your local machine. A production setup requires a Pro/Enterprise license, and SSO with JWT.
 
 ## Resources
 
