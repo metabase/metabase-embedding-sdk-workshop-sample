@@ -29,7 +29,7 @@ This is a starter React app for trying out [Embedded Analytics SDK](https://www.
    npm run dev
    ```
 
-5. Run the quickstart command:
+5. In a new terminal, run the quickstart command:
 
    ```bash
    npx @metabase/embedding-sdk-react start
