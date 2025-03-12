@@ -17,9 +17,11 @@ This is a starter React app for trying out [Embedded Analytics SDK](https://www.
    - [Download for Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
    - [Download for Linux](https://docs.docker.com/desktop/setup/install/linux/)
 
-For mac, if the CLI doesn't detect Docker running on your system, you may need to add Docker to your path. Add this export statement to your `~/.zshrc` file:
+   For macOS, if the CLI doesn't detect Docker running on your system, you may need to add Docker to your path. Add this export statement to your shell profile file (e.g. `~/.zshrc` or `~/.bashrc`):
 
-    export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+   ```bash
+   export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+   ```
 
 3. Install the Embedded Analytics SDK:
 
@@ -40,15 +42,16 @@ For mac, if the CLI doesn't detect Docker running on your system, you may need t
    ```
 
 6. Follow the instructions in your terminal to complete the setup. You can navigate the prompts with the arrow keys and `Enter` to select an option.
-6. Follow the instructions in your terminal to complete the setup. You can navigate the prompts with the arrow keys and `Enter` to select an option. 
-  
-  For the simplest setup:
+7. Follow the instructions in your terminal to complete the setup. You can navigate the prompts with the arrow keys and `Enter` to select an option.
 
-    - Pick any email address, doesn't have to be real (e.g., `me@example.com`).
-    - Say no to "Dod you have a database to connect to?" The tool will use sample data.
-    - Say no to "Do you want to set up a Pro license?"
-    - Hit enter to save the example React components to `./src/components/metabase`. 
-7. Import the `<AnalyticsPage />` demo component into `App.jsx`, like so:
+   For the simplest setup:
+
+   - Pick any email address, doesn't have to be real (e.g., `me@example.com`).
+   - Say no to "Dod you have a database to connect to?" The tool will use sample data.
+   - Say no to "Do you want to set up a Pro license?"
+   - Hit enter to save the example React components to `./src/components/metabase`.
+
+8. Import the `<AnalyticsPage />` demo component into `App.jsx`, like so:
 
    ```diff
    + import { AnalyticsPage } from "./components/metabase";
@@ -76,6 +79,7 @@ You can then play around with the interactive dashboard!
 
 In a production React app, you should never add `MetabaseProvider` to multiple pages or components, just like any other React providers. Instead, you should put it in the root of your app (e.g. `App.jsx`) or your root provider if you have one.
 Just like other React providers, do NOT add `MetabaseProvider` to more than one page, or more than one component. Instead, you should put `MetabaseProvider` in either a) the root of your app (e.g., `App.jsx`) or b) your root provider (if you have one).
+
 ## CLI is not intended for production use
 
 The CLI spins up a Metabase and helps you get an embedded dashboard in your app. This setup with API keys won’t work in production; it’s only intended for you to quickly try out the SDK on your local machine. A production setup requires a Pro/Enterprise license, and SSO with JWT.
