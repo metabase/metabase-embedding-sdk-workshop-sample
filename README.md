@@ -71,7 +71,7 @@ In a production React app, you should never add `MetabaseProvider` to multiple p
 Just like other React providers, do NOT add `MetabaseProvider` to more than one page, or more than one component. Instead, you should put `MetabaseProvider` in either a) the root of your app (e.g., `App.jsx`) or b) your root provider (if you have one).
 ## CLI is not intended for production use
 
-The CLI spins up a Metabase and help you get an embedded dashboard in your app. This setup with API keys won’t work in production; it’s only intended for you to quickly try out the SDK on your local machine. A production setup requires a Pro/Enterprise license, and SSO with JWT.
+The CLI spins up a Metabase and helps you get an embedded dashboard in your app. This setup with API keys won’t work in production; it’s only intended for you to quickly try out the SDK on your local machine. A production setup requires a Pro/Enterprise license, and SSO with JWT.
 
 ## Resources
 
