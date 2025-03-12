@@ -40,7 +40,14 @@ For mac, if the CLI doesn't detect Docker running on your system, you may need t
    ```
 
 6. Follow the instructions in your terminal to complete the setup. You can navigate the prompts with the arrow keys and `Enter` to select an option.
+6. Follow the instructions in your terminal to complete the setup. You can navigate the prompts with the arrow keys and `Enter` to select an option. 
+  
+  For the simplest setup:
 
+    - Pick any email address, doesn't have to be real (e.g., `me@example.com`).
+    - Say no to "Dod you have a database to connect to?" The tool will use sample data.
+    - Say no to "Do you want to set up a Pro license?"
+    - Hit enter to save the example React components to `./src/components/metabase`. 
 7. Import the `<AnalyticsPage />` demo component into `App.jsx`, like so:
 
    ```diff
