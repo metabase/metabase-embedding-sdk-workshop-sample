@@ -17,6 +17,10 @@ This is a starter React app for trying out [Embedded Analytics SDK](https://www.
    - [Download for Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
    - [Download for Linux](https://docs.docker.com/desktop/setup/install/linux/)
 
+For mac, if the CLI doesn't detect Docker running on your system, you may need to add Docker to your path. Add this export statement to your `~/.zshrc` file:
+
+    export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+
 3. Install the Embedded Analytics SDK:
 
    ```bash
