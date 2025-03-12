@@ -1,12 +1,90 @@
-# React + Vite
+# Metabase Embedded Analytics Workshop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a starter React app for trying out [Embedded Analytics SDK](https://www.metabase.com/docs/latest/embedding/sdk/introduction).
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone this repository:
 
-## Expanding the ESLint configuration
+   ```bash
+   git clone https://github.com/metabase/metabase-embedding-sdk-workshop-sample.git
+   cd metabase-embedding-sdk-workshop-sample
+   ```
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Start Docker on your machine. This is used to setup a clean Metabase instance to try out the SDK. If you don't have Docker installed, you can download Docker Desktop below:
+
+   - [Download for macOS](https://docs.docker.com/desktop/setup/install/mac-install/)
+   - [Download for Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
+   - [Download for Linux](https://docs.docker.com/desktop/setup/install/linux/)
+
+   For macOS, if the CLI doesn't detect Docker running on your system, you may need to add Docker to your path. Add this export statement to your shell profile file (e.g. `~/.zshrc` or `~/.bashrc`):
+
+   ```bash
+   export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+   ```
+
+3. Install the Embedded Analytics SDK:
+
+   ```bash
+   npm install @metabase/embedding-sdk-react@53-stable
+   ```
+
+4. Start the frontend. You can view the app at [http://localhost:5173](http://localhost:5173). The app has some hints and helpful links to get you started.
+
+   ```bash
+   npm run dev
+   ```
+
+5. In a new terminal, run the quickstart command:
+
+   ```bash
+   npx @metabase/embedding-sdk-react start
+   ```
+
+6. Follow the instructions in your terminal to complete the setup. You can navigate the prompts with the arrow keys and `Enter` to select an option.
+7. Follow the instructions in your terminal to complete the setup. You can navigate the prompts with the arrow keys and `Enter` to select an option.
+
+   For the simplest setup:
+
+   - Pick any email address, doesn't have to be real (e.g., `me@example.com`).
+   - Say no to "Dod you have a database to connect to?" The tool will use sample data.
+   - Say no to "Do you want to set up a Pro license?"
+   - Hit enter to save the example React components to `./src/components/metabase`.
+
+8. Import the `<AnalyticsPage />` demo component into `App.jsx`, like so:
+
+   ```diff
+   + import { AnalyticsPage } from "./components/metabase";
+
+   export default function App() {
+     return (
+       <DemoLayout>
+         <div className="min-h-[650px] w-full max-w-[1200px] bg-white rounded-xl">
+   +       <AnalyticsPage />
+         </div>
+       </DemoLayout>
+     );
+   }
+   ```
+
+You can then play around with the interactive dashboard!
+
+## What next?
+
+- The interactive dashboard is added by default in `analytics-dashboard.jsx`.
+  - Try rendering an [interactive question](https://www.metabase.com/docs/latest/embedding/sdk/questions) instead.
+- You can update the theme via `MetabaseProvider` in `embedding-provider.jsx`
+
+## There should be one, and only one, `MetabaseProvider` in your app
+
+Just like other React providers, do NOT add `MetabaseProvider` to more than one page, or more than one component. Instead, you should put `MetabaseProvider` in either a) the root of your app (e.g., `App.jsx`) or b) your root provider (if you have one).
+
+## CLI is not intended for production use
+
+The CLI spins up a Metabase and helps you get an embedded dashboard in your app. This setup with API keys won’t work in production; it’s only intended for you to quickly try out the SDK on your local machine. A production setup requires a Pro/Enterprise license, and SSO with JWT.
+
+## Resources
+
+- [SDK Documentation](https://www.metabase.com/docs/latest/embedding/sdk/introduction)
+- [Quickstart with CLI](https://www.metabase.com/docs/latest/embedding/sdk/quickstart-cli)
+- [Quickstart using your own Metabase instance](https://www.metabase.com/docs/latest/embedding/sdk/quickstart)
