@@ -77,7 +77,6 @@ You can then play around with the interactive dashboard!
 
 ## There should be one, and only one, `MetabaseProvider` in your app
 
-In a production React app, you should never add `MetabaseProvider` to multiple pages or components, just like any other React providers. Instead, you should put it in the root of your app (e.g. `App.jsx`) or your root provider if you have one.
 Just like other React providers, do NOT add `MetabaseProvider` to more than one page, or more than one component. Instead, you should put `MetabaseProvider` in either a) the root of your app (e.g., `App.jsx`) or b) your root provider (if you have one).
 
 ## CLI is not intended for production use
