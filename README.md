@@ -47,7 +47,7 @@ This is a starter React app for trying out [Embedded Analytics SDK](https://www.
    For the simplest setup:
 
    - Pick any email address, doesn't have to be real (e.g., `me@example.com`).
-   - Say no to "Dod you have a database to connect to?" The tool will use sample data.
+   - Say no to "Do you have a database to connect to?" The tool will use sample data.
    - Say no to "Do you want to set up a Pro license?"
    - Hit enter to save the example React components to `./src/components/metabase`.
 
